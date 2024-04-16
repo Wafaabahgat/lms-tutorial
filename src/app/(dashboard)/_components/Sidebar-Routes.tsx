@@ -2,7 +2,8 @@
 
 import { FC } from "react";
 import SidebarItems from "./sidebar-items";
-import { Compass, Layout } from "lucide-react";
+import { Compass, Layout, List, BarChart } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 interface SidebarRoutesProps {}
 
@@ -19,8 +20,24 @@ const guestRoutes = [
   },
 ];
 
+const teacherRoutes = [
+  {
+    icon: List,
+    href: "/teacher/courses",
+    label: "Courses",
+  },
+  {
+    icon: BarChart,
+    href: "/teacher/analytics",
+    label: "Analytics",
+  },
+];
+
 const SidebarRoutes: FC<SidebarRoutesProps> = () => {
-  const routes = guestRoutes;
+  const pathname = usePathname();
+  const isTeacherPage = pathname.includes("/teacher");
+
+  const routes = isTeacherPage ? teacherRoutes : guestRoutes;
 
   return (
     <div className="w-full flex flex-col">

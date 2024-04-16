@@ -1,9 +1,9 @@
 import { FC } from "react";
 
-interface pageProps {}
+interface SearchPageProps {}
 
-const page: FC<pageProps> = () => {
-  return <div>this is Search pages</div>;
+const SearchPage: FC<SearchPageProps> = () => {
+  return <div>SearchPage</div>;
 };
 
-export default page;
+export default SearchPage;
