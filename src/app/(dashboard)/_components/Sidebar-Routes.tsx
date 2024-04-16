@@ -1,3 +1,5 @@
+"use client";
+
 import { FC } from "react";
 import SidebarItems from "./sidebar-items";
 import { Compass, Layout } from "lucide-react";
@@ -19,8 +21,9 @@ const guestRoutes = [
 
 const SidebarRoutes: FC<SidebarRoutesProps> = () => {
   const routes = guestRoutes;
+
   return (
-    <div>
+    <div className="w-full flex flex-col">
       {routes.map((route) => (
         <SidebarItems
           key={route.href}

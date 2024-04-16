@@ -10,7 +10,7 @@ const Sidebar: FC<SidebarProps> = () => {
       <div className="p-4">
         <Logo />
       </div>
-      <div>
+      <div className="w-full flex flex-col">
         <SidebarRoutes />
       </div>
     </div>
